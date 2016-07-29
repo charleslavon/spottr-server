@@ -40,7 +40,7 @@ public class Wod {
          joinColumns=@JoinColumn(name="WOD_ID")
 	)
 	@Column(name="ATTENDEES")
-	private List<Long> attendees;
+	private List<Athlete> attendees;
 	
 	@ElementCollection
 	@CollectionTable(
