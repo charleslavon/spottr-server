@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.orm.jpa.EntityScan;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -66,7 +66,7 @@ public class AppConfig {
 			
 			logger.info("create some wods");
 			logger.info("--------------------------------------------");
-			wodRepo.save(new Wod(0L, "Charles", LocalDateTime.now(), 0L, "open box tomorrow at poble nou"));
+			wodRepo.save(new Wod(0L, "Charles", LocalDateTime.now().toString(), 0L, "open box tomorrow at poble nou"));
 			for(Wod w : wodRepo.findByAuthorId(0L)) {
 				logger.info("Found wod! " + w.toString());
 			}

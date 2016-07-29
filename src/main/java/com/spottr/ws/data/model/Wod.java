@@ -1,6 +1,5 @@
 package com.spottr.ws.data.model;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.CollectionTable;
@@ -33,7 +32,7 @@ public class Wod {
 	
 	private String description;
 	private int likes;
-	private LocalDateTime date;
+	private String date;
 	
 	@ElementCollection
 	@CollectionTable(
@@ -54,7 +53,7 @@ public class Wod {
 	public Wod(){}
 	
 	public Wod(long authorId, String authorName, 
-			LocalDateTime date, long locationId, String description) {
+			String date, long locationId, String description) {
 		this.authorId = authorId;
 		this.authorName = authorName;
 		this.locationId = locationId;
