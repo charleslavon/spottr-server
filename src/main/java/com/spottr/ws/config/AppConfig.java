@@ -43,11 +43,11 @@ public class AppConfig {
 		return (args) -> {
 			
 			// save some athletes
-			athleteRepo.save(new Athlete("Jack", "Bauer@.com"));
-			athleteRepo.save(new Athlete("Chloe", "O'Brian@.com"));
-			athleteRepo.save(new Athlete("Kim", "Bauer@a.com"));
-			athleteRepo.save(new Athlete("David", "Palmer@.com"));
-			athleteRepo.save(new Athlete("Michelle", "Dessler@.com"));
+			athleteRepo.save(new Athlete("Jack", "Bauer",  "Bauer@.com"));
+			athleteRepo.save(new Athlete("Chloe", "McFly", "O'Brian@.com"));
+			athleteRepo.save(new Athlete("Kim", "Berly", "Bauer@a.com"));
+			athleteRepo.save(new Athlete("David", "Leslie", "Palmer@.com"));
+			athleteRepo.save(new Athlete("Poor", "Michelle", "Dessler@.com"));
 
 			// fetch all athletes
 			logger.info("Athletes found with findAll():");
@@ -57,9 +57,9 @@ public class AppConfig {
 			}
             logger.info("");
 
-			logger.info("Athlete found with findByName('Jack'):");
+			logger.info("Athlete found with findByFirstName('Jack'):");
 			logger.info("--------------------------------------------");
-			for (Athlete bauer : athleteRepo.findByName("Jack")) {
+			for (Athlete bauer : athleteRepo.findByFirstName("Jack")) {
 				logger.info("Found jack! " + bauer.toString());
 			}
 			logger.info("");

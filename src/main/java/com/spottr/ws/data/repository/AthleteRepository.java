@@ -12,7 +12,11 @@ public interface AthleteRepository extends CrudRepository<Athlete, Long> {
 
     Athlete findById(long id);
     
-    List<Athlete> findByName(String name);
+    List<Athlete> findByFirstName(String firstName);
+    
+    List<Athlete> findByLastName(String lastName);
+    
+    List<Athlete> findByLastNameAndLastName(String firstName, String lastName);
     
     List<Athlete> findByEmail(String email);
     

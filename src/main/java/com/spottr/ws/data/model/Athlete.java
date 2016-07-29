@@ -15,21 +15,23 @@ public class Athlete {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
 	
-	private String name;
+	private String firstName;
+	private String lastName;
 	private String email;
 	private String phoneNumber;
 	
 	public Athlete(){}
 	
-	public Athlete(String name, String email) {
-		this.name = name;
+	public Athlete(String firstName, String lastName, String email) {
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.email = email;
 	}
 	
 	@Override
     public String toString() {
         return String.format(
-                "Athlete[id=%d, name='%s', email='%s']",
-                id, name, email);
+                "Athlete[id=%d, firstName='%s', email='%s']",
+                id, firstName, email);
     }
 }

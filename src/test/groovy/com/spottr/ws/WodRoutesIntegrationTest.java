@@ -2,6 +2,7 @@ package com.spottr.ws;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.net.URI;
@@ -27,7 +28,7 @@ import com.spottr.ws.data.model.Wod;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = { AppConfig.class }, webEnvironment = WebEnvironment.RANDOM_PORT)
-public class RoutesIntegrationTest {
+public class WodRoutesIntegrationTest {
 
 	@Autowired
 	private TestRestTemplate restTemplate;
@@ -181,6 +182,41 @@ public class RoutesIntegrationTest {
 		Athlete addedAttendee = wodWithAttendee.getAttendees().get(0);
 		assertThat(addedAttendee.getId()).isEqualTo(newAttendeeAthleteId);
 
+	}
+	
+	@Test
+	public void getLocationByIdShouldReturnListOfLocations() {
+		
+	}
+	
+	@Test
+	public void getLocationByIdShouldReturnValidLocation() {
+		
+	}
+	
+	@Test
+	public void getLocationByNameShouldReturnValidLocation() {
+		
+	}
+	
+	@Test
+	public void getLocationShouldReturnValidLocaiton() {
+		
+	}
+	
+	@Test
+	public void postLocationShouldCreateLocation() {
+		
+	}
+	
+	@Test
+	public void putLocationShouldUpdateASpecificLocation() {
+		
+	}
+	
+	@Test
+	public void deleteLocationShouldDeleteSpecificLocation() {
+		
 	}
 
 }
