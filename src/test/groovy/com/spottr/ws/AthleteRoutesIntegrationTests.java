@@ -1,7 +1,6 @@
 package com.spottr.ws;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -23,7 +22,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spottr.ws.config.AppConfig;
 import com.spottr.ws.data.model.Athlete;
-import com.spottr.ws.data.model.Wod;
 import com.spottr.ws.data.repository.AthleteRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -141,16 +139,13 @@ public class AthleteRoutesIntegrationTests {
 		long athleteId = athlete.getId();
 		assertThat(athlete).isNotNull();
 		
-		ResponseEntity<Athlete> responseEntity = restTemplate.exchange("/athlete/" + athleteId, HttpMethod.DELETE, null,
-				Athlete.class);
-		MediaType contentType = responseEntity.getHeaders().getContentType();
+		ResponseEntity<String> responseEntity = restTemplate.exchange("/athlete/" + athleteId, HttpMethod.DELETE, null,
+				String.class);
 		HttpStatus statusCode = responseEntity.getStatusCode();
 
 		responseEntity.getBody();
 
 		assertThat(statusCode.is2xxSuccessful()).isEqualTo(true);
-		assertThat(contentType.getType()).isEqualTo("application");
-		assertThat(contentType.getSubtype()).isEqualTo("json");
 
 		assertThat(athleteRepository.findById(athleteId)).isNull();
 	}
