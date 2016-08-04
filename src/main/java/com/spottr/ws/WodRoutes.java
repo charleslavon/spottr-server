@@ -36,6 +36,13 @@ public class WodRoutes {
 
 		return wods.findAll();
 	}
+	
+	@RequestMapping(value = "/{wodId}", method = RequestMethod.GET)
+	@ResponseBody
+	public Wod getWodById(@PathVariable long wodId) {
+
+		return wods.findById(wodId);
+	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseBody
