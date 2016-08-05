@@ -93,7 +93,7 @@ public class AppConfig {
 			}
 			logger.info("--------------------------------------------");
 			logger.info("Find location by name " + locationRepo.findByName("La Huella Crossfit").get(0).toString());
-			logger.info("Find location by Id " + locationRepo.findById(2L).toString());
+//			logger.info("Find location by Id " + locationRepo.findById(2L).toString());
 			
 		};
 	}

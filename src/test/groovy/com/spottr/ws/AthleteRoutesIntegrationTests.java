@@ -17,22 +17,20 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spottr.ws.config.AppConfig;
 import com.spottr.ws.data.model.Athlete;
 import com.spottr.ws.data.repository.AthleteRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = { AppConfig.class }, webEnvironment = WebEnvironment.RANDOM_PORT)
+@TestPropertySource(locations="classpath:test.properties")
 public class AthleteRoutesIntegrationTests {
 
 	@Autowired
 	private TestRestTemplate restTemplate;
-
-	@Autowired
-	private ObjectMapper objectMapper;
 
 	@Autowired
 	private AthleteRepository athleteRepository;

@@ -2,7 +2,6 @@ package com.spottr.ws;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.net.URI;
@@ -18,6 +17,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -28,6 +28,7 @@ import com.spottr.ws.data.model.Wod;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = { AppConfig.class }, webEnvironment = WebEnvironment.RANDOM_PORT)
+@TestPropertySource(locations="classpath:test.properties")
 public class WodRoutesIntegrationTest {
 
 	@Autowired
