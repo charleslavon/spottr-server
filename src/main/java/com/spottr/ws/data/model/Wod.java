@@ -18,7 +18,7 @@ import lombok.Data;
 public class Wod {
 	
 	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	
 	@Column(name="AUTHOR_ATHLETE_ID")
