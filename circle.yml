@@ -1,10 +1,14 @@
 machine:
   java:
     version:
-      oraclejdk8
+      openjdk8
   pre:
-	- curl -s https://get.sdkman.io | bash
-	- sdk install gradle 2.14
+	- wget -P /home/ubuntu/ -N https://services.gradle.org/distributions/gradle-2.9-all.zip
+	- unzip /home/ubuntu/gradle-2.9-all.zip -d /home/ubuntu/gradle
+	- sudo ln -sfn gradle-2.9 /home/ubuntu/gradle/latest
+  environment:
+    GRADLE_HOME: /home/ubuntu/gradle/latest export
+    PATH: $PATH:$GRADLE_HOME/bin
 deployment:
    staging:
      branch: master
