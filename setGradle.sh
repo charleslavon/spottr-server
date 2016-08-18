@@ -1,7 +1,7 @@
 
 gradle_version=2.9
 
-wget -Pq /home/ubuntu/ -N https://services.gradle.org/distributions/gradle-${gradle_version}-all.zip
+wget -P /home/ubuntu/ -N https://services.gradle.org/distributions/gradle-${gradle_version}-all.zip
 unzip /home/ubuntu/gradle-${gradle_version}-all.zip -d /home/ubuntu/gradle
 sudo ln -sfn gradle-${gradle_version} /home/ubuntu/gradle/latest
 /home/ubuntu/gradle/latest/bin/gradle -v
