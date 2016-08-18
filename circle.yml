@@ -7,6 +7,11 @@ dependencies:
     - chmod +x setGradle.sh
     - chmod +x gradle.sh
     - ./setGradle.sh
+  override:
+    - /home/ubuntu/gradle/latest/bin/gradle dependencies
+test:
+  override:
+    - /home/ubuntu/gradle/latest/bin/gradle build
 deployment:
    staging:
      branch: master
