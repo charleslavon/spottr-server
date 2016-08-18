@@ -6,10 +6,9 @@ machine:
     - wget -P /home/ubuntu/ -N https://services.gradle.org/distributions/gradle-2.9-all.zip
     - unzip /home/ubuntu/gradle-2.9-all.zip -d /home/ubuntu/gradle
     - sudo ln -sfn gradle-2.9 /home/ubuntu/gradle/latest
-    - export GRADLE_HOME=/home/ubuntu/gradle/latest export
-    - export PATH=${PATH%:/usr/local/heroku/bin}
-    - export PATH=${PATH%/usr/local/gradle-1.10/bin:}
-    - export PATH=$PATH:$GRADLE_HOME/bin
+    - export PATH=${PATH%/usr/local/heroku/bin}
+    - export PATH=${PATH%/usr/local/gradle-1.10/bin}
+    - export PATH=$PATH:/home/ubuntu/gradle/latest/bin
     - export PATH=$PATH:/usr/local/heroku/bin
 deployment:
    staging:
