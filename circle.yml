@@ -2,16 +2,9 @@ machine:
   java:
     version:
       openjdk8
+dependencies:
   pre:
-    - wget -P /home/ubuntu/ -N https://services.gradle.org/distributions/gradle-2.9-all.zip
-    - unzip /home/ubuntu/gradle-2.9-all.zip -d /home/ubuntu/gradle
-    - sudo ln -sfn gradle-2.9 /home/ubuntu/gradle/latest
-  environment:
-  	PATH: ${PATH%/usr/local/heroku/bin}
-  	PATH: ${PATH%/usr/local/gradle-1.10/bin}
-  	GRADLE_HOME: /home/ubuntu/gradle/latest
-  	PATH: $PATH:$GRADLE_HOME/bin
-  	PATH: $PATH:/usr/local/heroku/bin
+  	- ./setGradle.sh
 deployment:
    staging:
      branch: master
