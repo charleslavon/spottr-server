@@ -28,7 +28,7 @@ echo " "
 echo "final path is  " 
 echo $PATH
 
-source ./home/ubuntu/spottr-server/gradle.sh
+source /home/ubuntu/spottr-server/gradle.sh
 
 gradle -v
 
