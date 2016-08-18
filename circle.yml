@@ -4,8 +4,7 @@ machine:
       openjdk8
 dependencies:
   pre:
-  	- chmod +x setGradle.sh
-  	- ./setGradle.sh
+    - ./setGradle.sh
 deployment:
    staging:
      branch: master
