@@ -5,6 +5,7 @@ machine:
 dependencies:
   pre:
     - chmod +x setGradle.sh
+    - chmod +x gradle.sh
     - ./setGradle.sh
 deployment:
    staging:
