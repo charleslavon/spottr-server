@@ -19,7 +19,7 @@ export PATH=${PATH%/usr/local/gradle-1.10/bin}
 echo " "
 echo " " 
 echo "trimming ancient version of gradle from path " 
-
+echo $PATH
 export PATH=$PATH$GRADLE_HOME/bin
 export PATH=$PATH:/usr/local/heroku/bin:/home/ubuntu/.rvm/bin
 
@@ -28,8 +28,7 @@ echo " "
 echo "final path is  " 
 echo $PATH
 
-sudo printf "export GRADLE_HOME=$GRADLE_HOME\\nexport PATH=$PATH\\n" > /home/ubuntu/gradle.sh
-source ./home/ubuntu/gradle.sh
+source ./home/ubuntu/spottr-server/gradle.sh
 
 gradle -v
 
