@@ -13,10 +13,6 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 
-# Grunt intermediate storage
-.grunt
-
-
 # Dependencies
 node_modules
 src/node
@@ -25,7 +21,8 @@ node
 #build folders
 dist
 target 
-
+bin 
+build
 
 # Mac files
 .DS_Store
