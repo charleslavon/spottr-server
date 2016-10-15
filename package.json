@@ -1,0 +1,44 @@
+{
+  "name": "spottr-server",
+  "version": "1.0.0",
+  "description": "spottr backend with graphql",
+  "repository": "TBD",
+  "main": "index.js",
+  "options": {
+    "mocha": "--check-leaks --full-trace src/**/*spec.js"
+  },
+  "scripts": {
+    "test": "npm run lint && npm run testonly",
+    "testonly": "babel-node ./node_modules/.bin/_mocha $npm_package_options_mocha",
+    "lint": "esw src --color --ignore-pattern node_modules; exit 0",
+    "lint:watch": "esw src --color --ignore-pattern node_modules --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-register": "^6.16.3",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-graphql": "^0.5.4",
+    "faker": "^3.1.0",
+    "graphql": "^0.7.1",
+    "lodash": "^4.16.4",
+    "pg": "^6.1.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.24.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
+    "babel-eslint": "^7.0.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-node6": "^11.0.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.7.1",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-import": "^2.0.0",
+    "eslint-watch": "^2.1.14",
+    "mocha": "^3.1.0"
+  }
+}
