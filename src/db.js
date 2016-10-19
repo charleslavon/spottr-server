@@ -3,19 +3,7 @@ import _ from 'lodash';
 import Faker from 'faker';
 
 
-const Conn = new Sequelize(
-    process.env.SPOTTR_DB_NAME,
-    process.env.SPOTTR_DB_USERNAME,
-    process.env.SPOTTR_DB_PASSWORD, {
-        dialect: process.env.SPOTTR_DB_DIALECT,
-        host: process.env.SPOTTR_DB_HOST,
-        pool: {
-            max: 5,
-            min: 0,
-            idle: 10000
-        }
-    }
-);
+const Conn = new Sequelize(process.env.DATABASE_URL);
 
 const Workout = Conn.define('workout', {
     id: {
@@ -131,8 +119,8 @@ Athlete.belongsToMany(Workout, { through: AthleteWorkouts, foreignKey: 'athlete_
 Workout.belongsToMany(Athlete, { through: AthleteWorkouts, foreignKey: 'workout_id', as: 'attendees' });
 
 
-/*
-Conn.sync({ force: true }).then(() => {
+
+Conn.sync({ force: trues }).then(() => {
 
     _.times(10, () => {
         return Athlete.create({
@@ -165,7 +153,7 @@ Conn.sync({ force: true }).then(() => {
         });
     });
 });
-*/
+
 
 
 export default Conn;
