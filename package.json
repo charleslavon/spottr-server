@@ -5,7 +5,7 @@
   "repository": "TBD",
   "main": "index.js",
   "options": {
-    "mocha": "--check-leaks --full-trace src/**/*spec.js"
+    "mocha": "--check-leaks --full-trace src/*spec.js"
   },
   "scripts": {
     "test": "npm run lint && npm run testonly",

@@ -1,5 +1,5 @@
 import Express from 'express';
-import GraphqlHTTP from 'express-graphql';
+//import GraphqlHTTP from 'express-graphql';
 import SpottrSchema from './spottrschema';
 import BodyParser from 'body-parser';
 import * as GraphQL from 'graphql';

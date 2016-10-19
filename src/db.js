@@ -120,7 +120,7 @@ Workout.belongsToMany(Athlete, { through: AthleteWorkouts, foreignKey: 'workout_
 
 
 
-Conn.sync({ force: trues }).then(() => {
+Conn.sync({ force: true }).then(() => {
 
     _.times(10, () => {
         return Athlete.create({
