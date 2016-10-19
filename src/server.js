@@ -5,7 +5,7 @@ import BodyParser from 'body-parser';
 import * as GraphQL from 'graphql';
 
 const app = Express();
-const PORT = process.env.SPOTTR_SERVER_PORT;
+const PORT = process.env.PORT;
 
 /*
 app.use('/spottrql', GraphqlHTTP({
