@@ -119,7 +119,7 @@ Athlete.belongsToMany(Workout, { through: AthleteWorkouts, foreignKey: 'athlete_
 Workout.belongsToMany(Athlete, { through: AthleteWorkouts, foreignKey: 'workout_id', as: 'attendees' });
 
 
-
+/*
 Conn.sync({ force: true }).then(() => {
 
     _.times(10, () => {
@@ -153,6 +153,7 @@ Conn.sync({ force: true }).then(() => {
         });
     });
 });
+*/
 
 
 
