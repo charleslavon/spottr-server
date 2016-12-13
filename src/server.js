@@ -20,6 +20,8 @@ app.use(BodyParser.text({ type: 'application/graphql' }));
 
 app.post('/spottrql', (req, res) => {
 
+  res.header('Access-Control-Allow-Origin', 'http://clg.local.com:8080');
+
     GraphQL.graphql(SpottrSchema, req.body)
         .then((result) => {
             res.send(JSON.stringify(result, null, 2));
