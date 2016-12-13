@@ -19,8 +19,8 @@
     "lint:watch": "esw src --color --ignore-pattern node_modules --watch"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Charles",
+  "license": "UNLICENSED",
   "dependencies": {
     "babel-cli": "^6.16.0",
     "babel-core": "^6.17.0",
